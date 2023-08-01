@@ -1,0 +1,75 @@
+---
+section: Home
+nav:
+  Projects: /projects/
+  Reviews: /reviews/
+  Writing: /writing/
+  About: /about/
+  Resume: /resume/
+enableCommandConsole: true
+license: CC BY-NC-ND 4.0
+licenseText: /files/licenses/by-nc-nd-4.0.txt
+licenseLink: https://creativecommons.org/licenses/by-nc-nd/4.0/
+licenseImage: https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png
+---
+
+<% function is_defined(key) { return key in locals && typeof locals[key] !== 'undefined' &&
+locals[key] !== null; } function if_exists(key, elseVal = '') { return is_defined(key) ? locals[key]
+: elseVal; } function if_eq(a, b, ifVal, elVal = '') { return a === b ? ifVal : elVal; } %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Goose.us | <%= section %></title>
+
+    <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <% if(is_defined('enableCommandConsole') && enableCommandConsole) { %>
+    <link rel="stylesheet" href="/css/command-console.css" />
+    <% } %> <% if(environment.is_production) { %>
+    <script type="module" src="/js/bundle.js"></script>
+    <% } else { %>
+    <script type="module" src="/js/index.js"></script>
+    <% } %>
+  </head>
+  <body>
+    <div id="apps"></div>
+    <header>
+      <h1 class="<%= if_eq('Home',if_exists('section'),'active') %>"><a href="/">Goose.us</a></h1>
+      <nav>
+        <% for(const [name, link] of Object.entries(nav)) { %>
+        <a class="<%= if_eq(name, if_exists('section'), 'active', 'inactive') %>" href="<%= link %>"
+          ><%= name %></a
+        >
+        <% } %>
+      </nav>
+    </header>
+    <main>
+      <h2><a href="<%= nav[section] %>"><%- section %></a></h2>
+      <article><%- content %></article>
+    </main>
+    <footer>
+      <% if(is_defined('footnotes')) { %>
+      <ul id="footnotes">
+        <% for(const [idx, note] of footnotes.entries()) { %>
+        <li id="note-<%= idx %>"><sup>&<%- note.symbol %>;</sup> <span><%- note.html %></span></li>
+        <% } %>
+      </ul>
+      <% } %>
+      <div class="licenses">
+      <p class="license">
+        <span>Page content is licensed under <a rel="license" href="<%= licenseText %>" target="_blank"><%= license %></a>.</span>
+        <a rel="license" href="<%= licenseLink %>" target="_blank"
+          ><img
+            alt="Creative Commons License"
+            src="<%= licenseImage %>" /></a >
+      </p>
+      <p class="license">
+        <span>Site source and example code is licensed under <a rel="license" target="_blank" href="/LICENSE">MIT</a>.</span>
+      </p>
+    </div>
+    </footer>
+  </body>
+</html>

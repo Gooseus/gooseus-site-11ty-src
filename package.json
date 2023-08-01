@@ -1,0 +1,23 @@
+{
+  "name": "gooseus-site-src-11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "BUILD_ENV=development npx @11ty/eleventy",
+    "build:dev:watch": "BUILD_ENV=development npx @11ty/eleventy --watch",
+    "build:prod": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy",
+    "build:prod:watch": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy --watch",
+    "serve": "http-server -S -K ./localdev.goose.us+3-key.pem -C ./localdev.goose.us+3.pem public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "arrow-js": "^0.1.9",
+    "markdown-it-attrs": "^4.1.6",
+    "robot3": "^0.4.0"
+  }
+}

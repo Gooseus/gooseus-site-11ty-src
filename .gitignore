@@ -1,0 +1,9 @@
+.DS_Store
+*.pem
+.vscode
+
+node_modules
+
+_site
+public
+dist
