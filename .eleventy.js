@@ -1,6 +1,7 @@
 var markdownItAttrs = require("markdown-it-attrs");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("images");
@@ -13,15 +14,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setServerOptions({
     https: {
-      key: './localdev.goose.us+3-key.pem',
-      cert: './localdev.goose.us+3.pem'
-    }
+      key: "./localdev.goose.us+3-key.pem",
+      cert: "./localdev.goose.us+3.pem",
+    },
   });
-  
+
   return {
     dir: {
       input: ".",
-      output: "public"
-    } 
-  }
+      output: process.env.BUILD_ENV === "production" ? "../gooseus.github.io" : "public",
+    },
+  };
 };

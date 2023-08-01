@@ -1110,9 +1110,10 @@
     };
     // Interpreter constants
     const LINKS = {
-        builds: "/builds/",
-        reads: "/reads/",
-        writes: "/writes/",
+        projects: "/projects/",
+        reviews: "/reviews/",
+        writing: "/writing/",
+        about: "/about/",
         resume: "/resume/",
     };
     const HELP_MESSAGE = `<pre>
