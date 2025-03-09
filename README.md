@@ -75,7 +75,6 @@ The site includes:
 
 Considerations for updating the site in 2025:
 
-1. **Eleventy Updates**: Ensure compatibility with the latest 11ty version (currently using 2.0.1)
 2. **ArrowJS and Robot**: Check for updates or alternatives if these libraries are no longer maintained
 3. **Modern CSS Approaches**: Consider integrating Tailwind CSS or CSS custom properties for more flexible styling
 4. **Performance Optimization**: Implement image optimization and lazy loading techniques

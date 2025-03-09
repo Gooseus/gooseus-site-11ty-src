@@ -1,4 +1,6 @@
 var markdownItAttrs = require("markdown-it-attrs");
+// Import the EJS plugin
+const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
@@ -18,6 +20,9 @@ module.exports = function (eleventyConfig) {
       cert: "./localdev.goose.us+4.pem",
     },
   });
+
+  // Add the EJS plugin
+  eleventyConfig.addPlugin(ejsPlugin);
 
   return {
     dir: {
