@@ -8,7 +8,7 @@
     "build:dev:watch": "BUILD_ENV=development npx @11ty/eleventy --watch",
     "build:prod": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy",
     "build:prod:watch": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy --watch",
-    "serve": "http-server -S -K ./localdev.goose.us+3-key.pem -C ./localdev.goose.us+3.pem public",
+    "serve": "http-server -S -K ./localdev.goose.us+4-key.pem -C ./localdev.goose.us+4.pem public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +17,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "arrow-js": "^0.1.9",
+    "clean-css-cli": "^5.6.3",
+    "http-server": "^14.1.1",
     "markdown-it-attrs": "^4.1.6",
-    "robot3": "^0.4.0"
+    "robot3": "^0.4.0",
+    "rollup": "^4.35.0"
   }
 }

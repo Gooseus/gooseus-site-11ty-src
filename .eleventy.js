@@ -14,8 +14,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setServerOptions({
     https: {
-      key: "./localdev.goose.us+3-key.pem",
-      cert: "./localdev.goose.us+3.pem",
+      key: "./localdev.goose.us+4-key.pem",
+      cert: "./localdev.goose.us+4.pem",
     },
   });
 
