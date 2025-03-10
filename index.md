@@ -13,7 +13,6 @@ Here you can find:
 
 - My professional [resume](/resume).
 - Pages about personal and academic <a href="/projects/">projects</a> I've worked on, including [this website](/projects/personal-site/).
-- [Reviews](/reviews/) of things I've read.
-- Other [writing](/writing/) on various topics.
-- Some more [about me and this site](/about).
+- Musings on things I'm [reading](/reading/).
+- [Writing](/writing/) of my own.
 {.main-list}

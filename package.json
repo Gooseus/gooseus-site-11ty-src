@@ -8,7 +8,7 @@
     "build:dev:watch": "BUILD_ENV=development npx @11ty/eleventy --watch",
     "build:prod": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy",
     "build:prod:watch": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy --watch",
-    "serve": "http-server -S -K ./localdev.goose.us+4-key.pem -C ./localdev.goose.us+4.pem public",
+    "serve": "http-server -S -K ./localdev.goose.us+4-key.pem -C ./localdev.goose.us+4.pem public -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

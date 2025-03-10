@@ -12,7 +12,10 @@ enableCommandConsole: true
     <meta charset="utf-8" />
     <title>Shawn Marincas | Professional Resume</title>
     <meta property="og:title" content="Professional Resume of Shawn Marincas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <% if(environment.is_production) { %>
       <link type="text/css" rel="stylesheet" href="css/resume.min.css" />
     <% } else { %>
@@ -45,7 +48,7 @@ enableCommandConsole: true
           <h2>Solution Architect / Full-stack Developer</h2>
         </header>
         <!-- Summary of Self -->
-        <section>
+        <section class="summary">
           <h3>Summary</h3>
           <p>
             Skilled computer engineer with 20 years of experience in full stack
@@ -70,25 +73,22 @@ enableCommandConsole: true
             <span class="title">Senior Software Developer and Solutions Architect</span>
             <ul>
               <li>
-                Developed a dynamic templating system for a complex video creation pipeline using FFMpeg, integrating personalized game stats and custom video transformations (Signatures).
+                Developed an automated pipeline for creating personalized video game highlights for social media using MongoDB, Node, and FFMpeg.
               </li>
               <li>
-                Engineered MongoDB aggregation pipelines and TypeScript solutions to identify and connect disparate users based on game interactions.
+                Designed MongoDB aggregation pipelines and fast data processing large amounts of exported JSON data.
               </li>
               <li>
-                Collaborated on setting up a GraphQL Federated Router by integrating legacy GraphQL as a subgraph, effectively breaking a monolithic system into microservices.
+                Collaborated to build a Federated GraphQL API integrating a legacy monolith subgraph with new microservice subgraphs.
               </li>
               <li>
-                Designed, built, and populated a production-grade Neo4J (AuraDB) database with a federated GraphQL subgraph interface, streamlining complex data relationships.
-              </li>
-              <li>
-                Developed a Ruby-based subgraph notification service interfacing with the Novu notification system, enhancing real-time communication workflows.
+                Designed and built federated subgraph interface to a NodeJS microservice for a Neo4J database graph of game and social data.
               </li>
               <li>
                 Implemented NATS message broker system to facilitate real-time communication between microservices in the federated architecture.
               </li>
               <li>
-                Created custom tools for League of Legends and Counterstrike to parse and process game data into actionable timelines for 'smart-clipping'.
+                Developed a Ruby-based notification microservice connecting NATS / Jetstream to a 3rd party notification system (Novu).
               </li>
             </ul>
           </div>
@@ -259,58 +259,120 @@ enableCommandConsole: true
             </li>
           </ul>
         </div>
-        <!-- Languages that I have experience in -->
-        <div class="skills">
-          <h3>Languages</h3>
-          <h4>Proficient</h4>
-          <ul>
-            <li>Typescript / Javascript</li>
-            <li>HTML / CSS</li>
-            <li>Ruby</li>
-            <li>Python</li>
-          </ul>
-          <h4>Familiar<sup class="no-print side-note link" data-aside="Familiar means I've worked on something significant, or else I used to be proficient and haven't worked with it in awhile.">*</sup></h4>
-          <ul>
-            <li>Nim</li>
-            <li>PHP</li>
-            <li>Perl</li>
-            <li>Elixir</li>
-            <li>C#</li>
-          </ul>
-          <h4>Acquainted<sup class="no-print side-note link">*</sup></h4>
-          <ul>
-            <li>Julia</li>
-            <li>R</li>
-            <li>Lisp</li>
-            <li>Forth</li>
-            <li>C++</li>
-          </ul>
-        </div>
-        <!-- Technologies that I have experience in -->
-        <div class="skills">
-          <h3>Technologies</h3>
-          <h4>Proficient</h4>
-          <ul>
-            <li>React</li>
-            <li>Angular</li>
-            <li>NestJS</li>
-            <li>ExpressJS</li>
-            <li>MongoDB</li>
-            <li>TypeScript</li>
-            <li>GraphQL</li>
-            <li>Neo4J</li>
-            <li>FFMpeg</li>
-            <li>NATS</li>
-          </ul>
-          <h4>Familiar</h4>
-          <ul>
-            <li>NextJS</li>
-            <li>VueJS</li>
-            <li>Postgres</li>
-            <li>Novu</li>
-          </ul>
+        <!-- Revised Technical Skills section -->
+        <div class="skills-container">
+          <h3>Technical Expertise</h3>
+          
+          <div class="skill-category">
+            <h4>Core Competencies</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">React + NextJS</span>
+              <span class="skill-tag">Angular + NestJS</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">HTML + CSS</span>
+              <span class="skill-tag">GraphQL + Federation</span>
+              <span class="skill-tag">Ruby + Rails</span>
+              <span class="skill-tag">NodeJS</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">NATS</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">SQL + Postgres</span>
+              <span class="skill-tag">Cypher + Neo4J</span>
+              <span class="skill-tag">FFMpeg</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Cloudflare</span>
+              <span class="skill-tag">Github Actions</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Working Knowledge</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Elixir</span>
+              <span class="skill-tag">Nim</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">C# + .NET</span>
+              <span class="skill-tag">Perl</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Academic Experience</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Julia</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">Lisp</span>
+              <span class="skill-tag">Forth</span>
+            </div>
+          </div>
         </div>
       </aside>
     </main>
+    <script>
+      // Print layout adjustment specifically for page break issues
+      window.addEventListener('beforeprint', function() {
+        // Get key elements
+        const summary = document.querySelector('.summary');
+        const workExperience = document.querySelector('.work-experience');
+        const firstJob = workExperience.querySelector('div:first-child');
+        const secondJob = workExperience.querySelector('div:nth-child(2)');
+        
+        // Force summary to not break
+        summary.style.pageBreakAfter = 'avoid';
+        summary.style.pageBreakInside = 'avoid';
+        
+        // Force work experience to start on first page
+        workExperience.style.pageBreakBefore = 'auto';
+        
+        // Force work experience title and first job to stay together
+        workExperience.querySelector('h3').style.pageBreakAfter = 'avoid';
+        
+        // Force first job to stay on first page
+        firstJob.style.pageBreakBefore = 'auto';
+        firstJob.style.pageBreakAfter = 'auto';
+        firstJob.style.pageBreakInside = 'avoid';
+        
+        // Force second job to start on second page
+        if (secondJob) {
+          secondJob.style.pageBreakBefore = 'always';
+        }
+        
+        // Reduce spacing to fit more on first page
+        document.querySelector('header').style.marginBottom = '5px';
+        summary.style.marginBottom = '5px';
+        summary.querySelector('h3').style.marginBottom = '5px';
+        summary.querySelector('p').style.marginBottom = '5px';
+        workExperience.style.marginTop = '5px';
+        workExperience.querySelector('h3').style.marginBottom = '5px';
+        
+        // Compact first job
+        firstJob.style.padding = '0';
+        firstJob.style.marginTop = '5px';
+        firstJob.style.marginBottom = '0';
+        
+        // Reduce font sizes
+        summary.querySelector('p').style.fontSize = '9pt';
+        summary.querySelector('p').style.lineHeight = '1.2';
+        
+        // Make list items in first job smaller
+        firstJob.querySelectorAll('li').forEach(li => {
+          li.style.fontSize = '8pt';
+          li.style.lineHeight = '1.1';
+          li.style.marginBottom = '1px';
+        });
+      });
+      
+      window.addEventListener('afterprint', function() {
+        // Reset all inline styles
+        document.querySelectorAll('*').forEach(el => {
+          el.style = '';
+        });
+      });
+    </script>
   </body>
 </html>
