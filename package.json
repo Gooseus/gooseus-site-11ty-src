@@ -6,7 +6,8 @@
   "scripts": {
     "build:dev": "BUILD_ENV=development npx @11ty/eleventy",
     "build:dev:watch": "BUILD_ENV=development npx @11ty/eleventy --watch",
-    "build:prod": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy",
+    "clean:orphaned": "./clean-orphaned-dirs.sh",
+    "build:prod": "cleancss -o resume/css/resume.min.css resume/css/resume.css && rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js && BUILD_ENV=production npx @11ty/eleventy && npm run clean:orphaned",
     "build:prod:watch": "cleancss -o resume/css/resume.min.css resume/css/resume.css; rollup js/index.js --format iife --name \"siteBundle\" --file js/bundle.js; BUILD_ENV=production npx @11ty/eleventy --watch",
     "publish": "rsync -av --delete --exclude='.git/' public/ $DEST_FOLDER",
     "serve": "http-server -S -K ./localdev.goose.us+4-key.pem -C ./localdev.goose.us+4.pem public -c-1",

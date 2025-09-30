@@ -3,6 +3,19 @@ var markdownItAttrs = require("markdown-it-attrs");
 const ejsPlugin = require("@11ty/eleventy-plugin-ejs");
 
 module.exports = function (eleventyConfig) {
+  // Ignore CLAUDE.md from being processed
+  eleventyConfig.ignores.add("CLAUDE.md");
+
+  // Add global data for environment
+  eleventyConfig.addGlobalData("environment", () => {
+    const env = process.env.BUILD_ENV || 'development';
+    const is_production = env === 'production';
+    return {
+      name: env,
+      is_production
+    };
+  });
+
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.addPassthroughCopy("files");

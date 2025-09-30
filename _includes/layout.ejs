@@ -28,11 +28,7 @@ locals[key] !== null; } function if_exists(key, elseVal = '') { return is_define
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css" />
-    <% if(environment.is_production) { %>
-    <script type="module" src="/js/bundle.js"></script>
-    <% } else { %>
-    <script type="module" src="/js/index.js"></script>
-    <% } %>
+    <%- environment.is_production ? '<script type="module" src="/js/bundle.js"></script>' : '<script type="module" src="/js/index.js"></script>' %>
   </head>
   <body>
     <div id="apps"></div>
