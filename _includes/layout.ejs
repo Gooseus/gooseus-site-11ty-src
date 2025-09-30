@@ -2,10 +2,8 @@
 section: Home
 nav:
   Projects: /projects/
-  Reading: /reading/
-  Writing: /writing/
+  Thoughts: /thoughts/
   Resume: /resume/
-enableCommandConsole: true
 license: CC BY-NC-ND 4.0
 licenseText: /files/licenses/by-nc-nd-4.0.txt
 licenseLink: https://creativecommons.org/licenses/by-nc-nd/4.0/
@@ -30,9 +28,7 @@ locals[key] !== null; } function if_exists(key, elseVal = '') { return is_define
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css" />
-    <% if(is_defined('enableCommandConsole') && enableCommandConsole) { %>
-    <link rel="stylesheet" href="/css/command-console.css" />
-    <% } %> <% if(environment.is_production) { %>
+    <% if(environment.is_production) { %>
     <script type="module" src="/js/bundle.js"></script>
     <% } else { %>
     <script type="module" src="/js/index.js"></script>
@@ -76,7 +72,6 @@ locals[key] !== null; } function if_exists(key, elseVal = '') { return is_define
       </div>
     </footer>
     <script>
-      // Add smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
