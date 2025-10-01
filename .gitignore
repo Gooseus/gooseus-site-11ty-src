@@ -7,5 +7,6 @@ node_modules
 _site
 public
 dist
+screenshots
 
 CNAME
