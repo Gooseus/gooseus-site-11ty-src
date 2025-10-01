@@ -9,5 +9,4 @@ Here you can find:
 
 - My professional [resume](/resume).
 - Pages about personal and academic <a href="/projects/">projects</a> I've worked on.
-- [Thoughts](/thoughts/) I've written.
 {.main-list}
