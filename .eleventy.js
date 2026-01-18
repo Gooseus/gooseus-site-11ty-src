@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("ham-hero");
   eleventyConfig.addPassthroughCopy("resume/css");
   eleventyConfig.addPassthroughCopy("resume/images");
 
